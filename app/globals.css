@@ -96,3 +96,16 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--accent); ou
 
 .warn-card { background: var(--warn-soft); border-left: 3px solid var(--warn); padding: 1rem 1.25rem; border-radius: 3px; }
 .note-card { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 1rem 1.25rem; border-radius: 3px; }
+
+.home-steps { list-style: none; padding: 0; margin: 0 auto; max-width: 36rem; display: flex; flex-direction: column; gap: 0.85rem; }
+.home-steps li { display: flex; gap: 0.6rem; font-size: 1.02rem; line-height: 1.5; color: var(--foreground); }
+.home-steps-n { color: var(--accent); font-weight: 600; min-width: 1.5rem; flex-shrink: 0; }
+
+.progress-dots { display: inline-flex; gap: 0.4rem; align-items: center; }
+.progress-dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--rule); }
+.progress-dots span.active { background: var(--accent); }
+.progress-dots span.done { background: var(--accent); opacity: 0.45; }
+
+.step-detail dt { font-size: 0.85rem; color: var(--muted); font-weight: 500; margin-top: 0.5rem; }
+.step-detail dt:first-child { margin-top: 0; }
+.step-detail dd { margin-left: 0; font-size: 0.95rem; line-height: 1.55; }

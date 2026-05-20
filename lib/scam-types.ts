@@ -186,7 +186,7 @@ export const SCAM_TYPES: Record<ScamTypeId, ScamType> = {
       "bank-dispute",
     ],
     honestNote:
-      "Identity theft has the best-built recovery process of any category — identitytheft.gov walks you through it. When fraudulent accounts are challenged using an official FTC Identity Theft Report, more than 80% of cases are resolved in the victim's favor, according to published FTC data.",
+      "Identity theft is the one category where the FTC runs a guided recovery flow that produces a legally accepted Identity Theft Report — identitytheft.gov walks you through it. When fraudulent accounts are challenged using that report, more than 80% of cases are resolved in the victim's favor, according to published FTC data.",
   },
   "government-impersonation": {
     id: "government-impersonation",

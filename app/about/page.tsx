@@ -65,11 +65,11 @@ export default function AboutPage() {
 
       <h2 className="serif">Updates</h2>
       <p>
-        Filing procedures and bank policies change. The data files driving
-        this site live at <span className="mono">lib/channels.ts</span> and{" "}
-        <span className="mono">lib/scam-types.ts</span>; corrections and
-        updates should land there. Recovery bands are reviewed annually
-        against the latest FTC and IC3 reports.
+        Filing procedures, bank policies, and recovery rates change. The data
+        behind this site — scam categories, reporting channels, bank fraud
+        pages, recovery-rate bands — is open and version-controlled. The
+        annual review compares the bands against the latest FTC and IC3
+        reports and updates them in one place.
       </p>
 
       <h2 className="serif">Why this exists</h2>

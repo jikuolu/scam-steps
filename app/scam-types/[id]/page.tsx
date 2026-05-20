@@ -62,18 +62,14 @@ export default async function ScamTypePage({ params }: { params: Promise<{ id: s
               <h3 className="serif" style={{ margin: 0 }}>
                 {i + 1}. {ch.label}
               </h3>
-              <p className="prose mt-2 text-sm">
-                <strong>What it does:</strong> {ch.whatItDoes}
-              </p>
-              <p className="prose text-sm">
-                <strong>How to file:</strong> {ch.howToFile}
-              </p>
+              <p className="prose mt-2">{ch.whatItDoes}</p>
+              <p className="prose">{ch.howToFile}</p>
               <p className="prose text-sm" style={{ color: "var(--muted)", marginBottom: 0 }}>
-                <strong>What to expect:</strong> {ch.realisticOutcome}
+                Expected outcome: {ch.realisticOutcome}
               </p>
               {ch.url && (
-                <p className="prose text-sm mt-1" style={{ marginBottom: 0 }}>
-                  <a href={ch.url} target="_blank" rel="noopener noreferrer">{ch.url}</a>
+                <p className="prose text-sm mt-2" style={{ marginBottom: 0 }}>
+                  <a className="underline-link" href={ch.url} target="_blank" rel="noopener noreferrer">{ch.url}</a>
                 </p>
               )}
             </li>

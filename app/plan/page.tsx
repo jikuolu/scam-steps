@@ -158,7 +158,7 @@ export default function PlanPage() {
           <ol className="mt-3 flex flex-col gap-3">
             {plan.steps.map((step) => (
               <li key={`${step.order}-${step.channel}`} className="card">
-                <div className="flex justify-between items-baseline gap-3">
+                <div className="flex justify-between items-baseline gap-3 flex-wrap">
                   <h3 className="serif" style={{ margin: 0 }}>
                     {step.order + 1}. {step.title}
                   </h3>
@@ -169,14 +169,9 @@ export default function PlanPage() {
                     {step.deadline}
                   </div>
                 )}
-                <p className="prose mt-2 text-sm">
-                  <strong>Why this step:</strong> {step.rationale}
-                </p>
-                <p className="prose text-sm">
-                  <strong>How to file:</strong> {step.whatToDo}
-                </p>
+                <p className="prose mt-2">{step.whatToDo}</p>
                 <p className="prose text-sm" style={{ color: "var(--muted)", marginBottom: 0 }}>
-                  <strong>What to expect:</strong> {step.expectedOutcome}
+                  Expected outcome: {step.expectedOutcome}
                 </p>
               </li>
             ))}

@@ -54,13 +54,26 @@ function urgencyFor(channel: ChannelId, hoursSinceIncident: number, criticalHour
 function deadlineFor(channel: ChannelId, scamType: ScamTypeId, hoursSince: number): string | undefined {
   if (channel === "bank-dispute") {
     if (scamType === "card-unauthorized") {
-      const hoursLeft = Math.max(0, 60 * 24 - hoursSince);
-      return `Regulation E / Z window: ${Math.floor(hoursLeft / 24)} days remaining of the 60-day filing window`;
+      const daysLeft = Math.max(0, Math.ceil((60 * 24 - hoursSince) / 24));
+      if (daysLeft === 0) return "60-day filing window has passed — file anyway and explain the delay";
+      return `Filing window: ${daysLeft} day${daysLeft === 1 ? "" : "s"} remaining (60-day cap)`;
     }
-    if (scamType === "wire-transfer") return "Wire-recall window: 24–48 hours from initiation";
-    if (scamType === "crypto-exchange-held") return "Exchange-freeze window: hours, not days";
+    if (scamType === "wire-transfer") {
+      const hoursLeft = Math.max(0, 48 - hoursSince);
+      if (hoursLeft === 0) return "Wire-recall window has likely closed — call anyway";
+      return `Wire-recall window: about ${hoursLeft} hour${hoursLeft === 1 ? "" : "s"} remaining`;
+    }
+    if (scamType === "crypto-exchange-held") {
+      const hoursLeft = Math.max(0, 24 - hoursSince);
+      if (hoursLeft === 0) return "Exchange-freeze window has likely closed — call anyway";
+      return `Exchange-freeze window: about ${hoursLeft} hour${hoursLeft === 1 ? "" : "s"} remaining`;
+    }
   }
-  if (channel === "exchange-report") return "Within 24 hours — freeze window is short";
+  if (channel === "exchange-report") {
+    const hoursLeft = Math.max(0, 24 - hoursSince);
+    if (hoursLeft === 0) return "Within 24 hours of the transfer — window has likely closed";
+    return `Within 24 hours of the transfer — about ${hoursLeft} hour${hoursLeft === 1 ? "" : "s"} remaining`;
+  }
   return undefined;
 }
 

@@ -144,10 +144,36 @@ export default function TriagePage() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <div className="text-sm mb-3" style={{ color: "var(--muted)" }}>
-        Step {step + 1} of {steps.length}
+      <p className="prose" style={{ color: "var(--foreground)" }}>
+        Your answers stay in this browser tab. Nothing is sent anywhere.
+      </p>
+
+      <div className="mt-6 flex items-center gap-4">
+        <div className="flex gap-2" aria-label={`Step ${step + 1} of ${steps.length}`}>
+          {steps.map((_, i) => {
+            const isActive = i === step;
+            const isDone = i < step;
+            return (
+              <span
+                key={i}
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  borderRadius: "50%",
+                  background: isActive || isDone ? "var(--accent)" : "var(--rule)",
+                  opacity: isDone ? 0.45 : 1,
+                  display: "inline-block",
+                }}
+              />
+            );
+          })}
+        </div>
+        <span className="text-sm" style={{ color: "var(--muted)" }}>
+          Step {step + 1} of {steps.length}
+        </span>
       </div>
-      <h1 className="serif">{current.label}</h1>
+
+      <h1 className="serif mt-4">{current.label}</h1>
       <div className="mt-6">{current.body}</div>
 
       <div className="mt-8 flex justify-between">
@@ -160,7 +186,7 @@ export default function TriagePage() {
         </button>
         {isLast ? (
           <button className="btn-primary" disabled={!current.valid} onClick={submit}>
-            Generate plan
+            See what to do
           </button>
         ) : (
           <button
@@ -172,11 +198,6 @@ export default function TriagePage() {
           </button>
         )}
       </div>
-
-      <p className="mt-10 text-sm" style={{ color: "var(--muted)" }}>
-        Nothing on this page is sent anywhere. Your answers stay in this
-        browser tab.
-      </p>
     </div>
   );
 }

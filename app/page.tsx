@@ -28,6 +28,26 @@ export default function Home() {
             Or browse by scam type
           </Link>
         </div>
+
+        <ol
+          className="mt-10 text-left flex flex-col gap-3 mx-auto"
+          style={{ maxWidth: "36rem", listStyle: "none", paddingLeft: 0 }}
+        >
+          {[
+            "Answer five short questions about what happened.",
+            "See an ordered plan — calls to make first, then the agencies and forms that apply to your case, with the deadlines that matter.",
+            "Get editable drafts of every report you'll need to file — bank dispute, police, FBI IC3, FTC, and more. Copy, edit, send them yourself.",
+          ].map((text, i) => (
+            <li key={i} className="flex gap-3" style={{ fontSize: "1.02rem", lineHeight: 1.5 }}>
+              <span
+                style={{ color: "var(--accent)", fontWeight: 600, minWidth: "1.25rem", flexShrink: 0 }}
+              >
+                {i + 1}.
+              </span>
+              <span>{text}</span>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="mt-10 note-card">

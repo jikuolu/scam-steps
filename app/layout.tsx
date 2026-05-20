@@ -37,12 +37,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="border-t rule mt-16">
           <div className="max-w-5xl mx-auto px-6 py-8 text-sm" style={{ color: "var(--muted)" }}>
             <p className="prose">
-              Free self-serve reference. No accounts, no tracking, no payment, no paid
-              upgrade. Not a consultation service and not affiliated with any. All filing
-              templates are drafts you review and submit yourself — this site does not
-              contact any agency or institution on your behalf. Not legal advice; consult
-              a consumer-protection attorney for losses over approximately $10,000 or
-              where civil action is being considered.
+              Free self-serve reference. No accounts, tracking, payment, or consultation.
+              Not a paid service and not affiliated with any.
+            </p>
+            <p className="prose">
+              Templates are drafts; you submit them yourself. This site does not contact
+              any agency on your behalf. Not legal advice — for losses over approximately
+              $10,000 or where civil action is being considered, consult a
+              consumer-protection attorney.
             </p>
             <p className="mt-2">
               <Link href="/about">About the methodology and sources.</Link>

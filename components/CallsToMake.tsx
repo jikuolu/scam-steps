@@ -23,9 +23,9 @@ export function CallsToMake({ scamType }: { scamType: ScamTypeId }) {
           return (
             <li key={id} className="divider" style={{ paddingTop: i === 0 ? 0 : "0.75rem", borderTop: i === 0 ? "none" : undefined }}>
               <div className="flex justify-between items-baseline gap-3 flex-wrap">
-                <h4 className="serif" style={{ margin: 0 }}>
+                <h3 className="serif" style={{ margin: 0, fontSize: "1.12rem" }}>
                   {i + 1}. {c.who}
-                </h4>
+                </h3>
                 {c.hours && (
                   <span className="text-xs" style={{ color: "var(--muted)" }}>
                     {c.hours}

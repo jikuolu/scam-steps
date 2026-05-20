@@ -67,7 +67,7 @@ export const CHANNELS: Record<ChannelId, Channel> = {
     label: "FTC IdentityTheft.gov",
     url: "https://identitytheft.gov",
     whatItIs:
-      "The FTC's identity-theft-specific recovery flow — the best-built channel for cases where SSN or accounts were compromised.",
+      "The FTC's guided recovery process for identity theft. The only channel that produces a legally accepted Identity Theft Report, which banks and creditors must honor.",
     whatItDoes:
       "Walks you through a personalized recovery plan, drafts dispute letters to creditors, and produces an official FTC Identity Theft Report. Banks and creditors are required by law (the Fair Credit Reporting Act) to accept this report.",
     howToFile:
