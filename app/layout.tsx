@@ -44,7 +44,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col">
         <header>
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-            <Link href="/" className="no-underline flex items-baseline gap-2">
+            <Link href="/" className="no-underline flex items-center gap-2">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                style={{ width: "1.4rem", height: "1.4rem", flexShrink: 0 }}
+              >
+                <rect x="2" y="14" width="5" height="6" rx="0.6" fill="var(--accent)" opacity="0.35" />
+                <rect x="9.5" y="9" width="5" height="11" rx="0.6" fill="var(--accent)" opacity="0.65" />
+                <rect x="17" y="4" width="5" height="16" rx="0.6" fill="var(--accent)" />
+              </svg>
               <span className="serif wordmark">Scam Steps</span>
               <span className="text-sm" style={{ color: "var(--muted)" }}>US, beta</span>
             </Link>
