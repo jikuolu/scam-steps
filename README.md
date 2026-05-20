@@ -16,6 +16,11 @@ npm run dev
 # http://localhost:3000
 ```
 
+## Deploy
+
+See [`DEPLOY.md`](./DEPLOY.md). Cloudflare for the domain, Vercel for
+hosting, Search Console for indexing. ~30 minutes end-to-end.
+
 ## What's in this repo
 
 ```

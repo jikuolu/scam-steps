@@ -2,8 +2,9 @@ import Link from "next/link";
 import { SCAM_TYPES } from "@/lib/scam-types";
 
 export const metadata = {
-  title: "All scam types — Scam Steps",
+  title: "All scam types",
   description: "Honest recovery-rate bands and first actions per scam category.",
+  alternates: { canonical: "/scam-types" },
 };
 
 export default function ScamTypesPage() {

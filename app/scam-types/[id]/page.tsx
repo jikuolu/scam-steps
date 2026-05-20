@@ -15,8 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const t = SCAM_TYPES[id as ScamTypeId];
   if (!t) return {};
   return {
-    title: `${t.label} — Scam Steps`,
+    title: t.label,
     description: t.oneLine,
+    alternates: { canonical: `/scam-types/${id}` },
   };
 }
 

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Newsreader } from "next/font/google";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -11,9 +14,28 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Scam Steps — free self-serve guide for scam victims",
-  description:
-    "Free, self-serve guide for US scam victims. Five questions, an ordered plan, the calls to make first, and editable filing-template drafts. No accounts, no payment, no data stored. Not a paid consultation service.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — free self-serve guide for scam victims`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: `${SITE_NAME} — free self-serve guide for scam victims`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: `${SITE_NAME} — free self-serve guide for scam victims`,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -34,6 +56,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
         <main className="flex-1">{children}</main>
+        <Analytics />
+        <SpeedInsights />
         <footer className="border-t rule mt-16">
           <div className="max-w-5xl mx-auto px-6 py-8 text-sm" style={{ color: "var(--muted)" }}>
             <p className="prose">

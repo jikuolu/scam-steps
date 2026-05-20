@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "About — Scam Steps",
+  title: "About",
   description: "Methodology, sources, what this site is and isn't.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
