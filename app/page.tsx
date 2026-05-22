@@ -10,19 +10,8 @@ export default function Home() {
   return (
     <div className="max-w-3xl mx-auto px-6 pt-20 pb-14">
       <section className="text-center flex flex-col items-center">
-        <p
-          className="text-sm"
-          style={{
-            color: "var(--accent)",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            fontWeight: 600,
-          }}
-        >
+        <h1 className="serif home-title">
           A free, step-by-step guide if you've been scammed
-        </p>
-        <h1 className="serif home-title mt-3">
-          One step at a time. Here's what to do first.
         </h1>
         <div className="prose home-lede mt-7 flex flex-col items-center" style={{ textAlign: "center" }}>
           <p>
