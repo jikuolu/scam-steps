@@ -5,6 +5,7 @@ import { CHANNELS, type ChannelId } from "@/lib/channels";
 import { OfficialHelp } from "@/components/OfficialHelp";
 import { CallsToMake } from "@/components/CallsToMake";
 import { BankLookup } from "@/components/BankLookup";
+import { ScamTypeTabs } from "@/components/ScamTypeTabs";
 
 export function generateStaticParams() {
   return Object.keys(SCAM_TYPES).map((id) => ({ id }));
@@ -43,40 +44,45 @@ export default async function ScamTypePage({ params }: { params: Promise<{ id: s
       <h2 className="serif mt-10">Do this first</h2>
       <p className="prose mt-2">{t.firstAction}</p>
 
-      <div className="mt-6">
-        <CallsToMake scamType={t.id} />
-      </div>
-
-      {t.id !== "crypto-external-wallet" && (
-        <div className="mt-4">
-          <BankLookup />
-        </div>
-      )}
-
-      <h2 className="serif mt-10">Channels in priority order</h2>
-      <ol className="mt-3 flex flex-col gap-3">
-        {t.channels.map((channelId, i) => {
-          const ch = CHANNELS[channelId as ChannelId];
-          if (!ch) return null;
-          return (
-            <li key={channelId} className="card">
-              <h3 className="serif" style={{ margin: 0 }}>
-                {i + 1}. {ch.label}
-              </h3>
-              <p className="prose mt-2">{ch.whatItDoes}</p>
-              <p className="prose">{ch.howToFile}</p>
-              <p className="prose text-sm" style={{ color: "var(--muted)", marginBottom: 0 }}>
-                Expected outcome: {ch.realisticOutcome}
-              </p>
-              {ch.url && (
-                <p className="prose text-sm mt-2" style={{ marginBottom: 0 }}>
-                  <a className="underline-link" href={ch.url} target="_blank" rel="noopener noreferrer">{ch.url}</a>
-                </p>
+      <div className="mt-8">
+        <ScamTypeTabs
+          calls={
+            <>
+              <CallsToMake scamType={t.id} />
+              {t.id !== "crypto-external-wallet" && (
+                <div className="mt-4">
+                  <BankLookup />
+                </div>
               )}
-            </li>
-          );
-        })}
-      </ol>
+            </>
+          }
+          channels={
+            <ol className="flex flex-col gap-3">
+              {t.channels.map((channelId, i) => {
+                const ch = CHANNELS[channelId as ChannelId];
+                if (!ch) return null;
+                return (
+                  <li key={channelId} className="card">
+                    <h3 className="serif" style={{ margin: 0 }}>
+                      {i + 1}. {ch.label}
+                    </h3>
+                    <p className="prose mt-2">{ch.whatItDoes}</p>
+                    <p className="prose">{ch.howToFile}</p>
+                    <p className="prose text-sm" style={{ color: "var(--muted)", marginBottom: 0 }}>
+                      Expected outcome: {ch.realisticOutcome}
+                    </p>
+                    {ch.url && (
+                      <p className="prose text-sm mt-2" style={{ marginBottom: 0 }}>
+                        <a className="underline-link" href={ch.url} target="_blank" rel="noopener noreferrer">{ch.url}</a>
+                      </p>
+                    )}
+                  </li>
+                );
+              })}
+            </ol>
+          }
+        />
+      </div>
 
       <div className="mt-10">
         <OfficialHelp compact />
