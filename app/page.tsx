@@ -13,16 +13,8 @@ export default function Home() {
         <h1 className="serif home-title">
           A free, step-by-step guide if you've been scammed
         </h1>
-        <div className="prose home-lede mt-7 flex flex-col items-center" style={{ textAlign: "center" }}>
-          <p>
-            Five short questions about what happened. Then you get the calls
-            to make first — your bank, the right hotline, the right agency,
-            in the right order.
-          </p>
-          <p>
-            And a generated draft you can use for the official reports and
-            communications that follow.
-          </p>
+        <div className="prose home-lede mt-6 flex flex-col items-center" style={{ textAlign: "center" }}>
+          <p>Take a breath. The next steps are more manageable than they feel right now.</p>
         </div>
 
         <div className="mt-9 flex gap-3 flex-wrap justify-center">
