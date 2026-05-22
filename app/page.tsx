@@ -22,9 +22,16 @@ export default function Home() {
             Start — 2 minutes
           </Link>
           <Link href="/scam-types" className="btn-ghost lg">
-            Or browse by scam type
+            Recent common scams
           </Link>
         </div>
+
+        <p className="mt-5" style={{ fontSize: "1.02rem" }}>
+          Not sure it was a scam?{" "}
+          <Link href="/am-i-scammed" className="underline-link">
+            Check the warning signs
+          </Link>
+        </p>
 
         <ol
           className="mt-10 text-left flex flex-col gap-3 mx-auto"

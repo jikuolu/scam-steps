@@ -63,7 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="flex gap-5 text-sm">
               <Link href="/triage">Start</Link>
-              <Link href="/scam-types">All types</Link>
+              <Link href="/am-i-scammed">Am I scammed?</Link>
+              <Link href="/scam-types">Common scams</Link>
               <Link href="/about">About</Link>
             </nav>
           </div>

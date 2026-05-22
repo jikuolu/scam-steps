@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SCAM_TYPES } from "@/lib/scam-types";
 
 export const metadata = {
-  title: "All scam types",
+  title: "Common scams",
   description: "Honest recovery-rate bands and first actions per scam category.",
   alternates: { canonical: "/scam-types" },
 };
@@ -13,7 +13,7 @@ export default function ScamTypesPage() {
   );
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="serif">All scam types</h1>
+      <h1 className="serif">Common scams</h1>
       <p className="prose mt-3" style={{ color: "var(--muted)" }}>
         Sorted by typical recovery rate, highest first. The percentage is the
         share of victims in that category who get their money back when
