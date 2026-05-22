@@ -59,7 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <rect x="17" y="4" width="5" height="16" rx="0.6" fill="var(--accent)" />
               </svg>
               <span className="serif wordmark">Scam Steps</span>
-              <span className="text-sm" style={{ color: "var(--muted)" }}>US, beta</span>
             </Link>
             <nav className="flex gap-5 text-sm">
               <Link href="/triage">Start</Link>
