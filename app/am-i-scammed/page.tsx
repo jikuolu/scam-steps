@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { OfficialHelp } from "@/components/OfficialHelp";
 import { WarningSigns } from "@/components/WarningSigns";
 
 export const metadata = {
@@ -41,60 +40,22 @@ export default function AmIScammedPage() {
       </section>
 
       <section className="mt-8">
-        <h2 className="serif">If you haven't paid or shared anything yet</h2>
-        <p className="prose mt-2">
-          Good — you may have caught this in time. Do this:
-        </p>
-        <ul className="prose">
-          <li>
-            <strong>Stop responding.</strong> End the call, stop replying.
-            You do not owe them a conversation, an explanation, or a goodbye.
-          </li>
-          <li>
-            <strong>Don't pay, and don't share anything more</strong> — no
-            codes, no card numbers, no remote access — no matter what they
-            threaten.
-          </li>
-          <li>
-            <strong>Check independently.</strong> If they claimed to be your
-            bank, a government agency, or a company, look up the real number
-            yourself — on the back of your card, on a past statement, or on
-            the agency's official website — and call that. Never use a number,
-            link, or contact they gave you.
-          </li>
-          <li>
-            <strong>Take your time.</strong> Real institutions will still be
-            there in an hour. Anyone who can't survive you hanging up to
-            verify is telling you what they are.
-          </li>
+        <h2 className="serif">If you haven't paid yet — do this now</h2>
+        <ul className="prose mt-3">
+          <li><strong>Stop responding.</strong> Hang up, stop replying. You don't owe them a goodbye.</li>
+          <li><strong>Don't pay or share anything</strong> — no codes, card numbers, or remote access — whatever they threaten.</li>
+          <li><strong>Verify yourself.</strong> Look up the real number — on your card, a statement, the official website — and call that. Never a number or link they gave you.</li>
+          <li><strong>Take your time.</strong> Anyone who can't survive you hanging up to check is telling you what they are.</li>
         </ul>
-        <p className="prose">
-          If it turns out to be real, you've lost a few minutes. If it was a
-          scam, you've lost nothing. That trade is always worth it.
-        </p>
       </section>
 
-      <section className="mt-8">
-        <h2 className="serif">If you've already paid or shared information</h2>
-        <p className="prose mt-2">
-          Then the recovery steps matter, and timing matters — some of them
-          have deadlines measured in hours. The guide will ask five short
-          questions and give you an ordered plan: the calls to make first,
-          the agencies and forms that apply, and editable drafts of every
-          report.
+      <section className="mt-8 note-card">
+        <p className="prose" style={{ margin: 0 }}>
+          <strong>Already paid, or shared a code, password, or card number?</strong>{" "}
+          Then this moves from prevention to recovery, and some steps have
+          deadlines measured in hours.{" "}
+          <Link href="/triage" className="underline-link">Start the recovery steps</Link>.
         </p>
-        <div className="mt-4 flex gap-3 flex-wrap">
-          <Link href="/triage" className="btn-primary lg no-underline">
-            Start — what to do now
-          </Link>
-          <Link href="/scam-types" className="btn-ghost lg no-underline">
-            Recent common scams
-          </Link>
-        </div>
-      </section>
-
-      <section className="mt-12">
-        <OfficialHelp />
       </section>
     </div>
   );
