@@ -3,58 +3,61 @@ import Link from "next/link";
 import { OfficialHelp } from "@/components/OfficialHelp";
 
 export const metadata: Metadata = {
+  title: "Is this a scam? Free check + recovery steps",
+  description:
+    "Free, self-serve guide for US scams. Check the warning signs in seconds, or start the recovery steps if money or information has already left your hands. No signup, no payment, nothing stored.",
   alternates: { canonical: "/" },
 };
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto px-6 pt-20 pb-14">
-      <section className="text-center flex flex-col items-center">
-        <h1 className="serif home-title">
-          A free, step-by-step guide if you've been scammed
-        </h1>
-        <div className="prose home-lede mt-6 flex flex-col items-center" style={{ textAlign: "center" }}>
-          <p>Take a breath. The next steps are more manageable than they feel right now.</p>
-        </div>
-
-        <div className="mt-9 flex gap-3 flex-wrap justify-center">
-          <Link href="/triage" className="btn-primary lg">
-            Start — 2 minutes
-          </Link>
-          <Link href="/scam-types" className="btn-ghost lg">
-            Recent common scams
-          </Link>
-        </div>
-
-        <p className="mt-5" style={{ fontSize: "1.02rem" }}>
-          Not sure it was a scam?{" "}
-          <Link href="/am-i-scammed" className="underline-link">
-            Check the warning signs
-          </Link>
+    <div className="max-w-3xl mx-auto px-6 pt-6 pb-14">
+      <section
+        className="mb-10"
+        style={{
+          border: "1px solid var(--warn)",
+          background: "var(--warn-soft)",
+          borderRadius: 4,
+          padding: "0.85rem 1.1rem",
+        }}
+      >
+        <p className="prose" style={{ margin: 0, color: "var(--warn)", fontWeight: 500 }}>
+          On a call right now with someone pressuring you? Hang up. You're
+          allowed to.
         </p>
-
-        <ol
-          className="mt-10 text-left flex flex-col gap-3 mx-auto"
-          style={{ maxWidth: "36rem", listStyle: "none", paddingLeft: 0 }}
-        >
-          {[
-            "Answer five short questions about what happened.",
-            "See an ordered plan — calls to make first, then the agencies and forms that apply to your case, with the deadlines that matter.",
-            "Get editable drafts of every report you'll need to file — bank dispute, police, FBI IC3, FTC, and more. Copy, edit, send them yourself.",
-          ].map((text, i) => (
-            <li key={i} className="flex gap-3" style={{ fontSize: "1.02rem", lineHeight: 1.5 }}>
-              <span
-                style={{ color: "var(--accent)", fontWeight: 600, minWidth: "1.25rem", flexShrink: 0 }}
-              >
-                {i + 1}.
-              </span>
-              <span>{text}</span>
-            </li>
-          ))}
-        </ol>
+        <p className="prose mt-1 text-sm" style={{ margin: "0.35rem 0 0", color: "var(--foreground)" }}>
+          Real police, banks, the IRS, Medicare, and Microsoft never call like
+          this. Hanging up is safe. You can always call them back at a number
+          you trust.
+        </p>
       </section>
 
-      <section className="mt-10 note-card">
+      <section className="text-center flex flex-col items-center">
+        <h1 className="serif home-title">
+          Is this a scam? Or did one already happen?
+        </h1>
+        <div className="prose home-lede mt-5 flex flex-col items-center" style={{ textAlign: "center" }}>
+          <p>Take a breath. We'll help you figure it out — and what to do next.</p>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center gap-3 w-full">
+          <Link
+            href="/am-i-scammed"
+            className="btn-primary lg"
+            style={{ width: "100%", maxWidth: "26rem", textAlign: "center", padding: "1.1rem 1.5rem", fontSize: "1.15rem" }}
+          >
+            Check if it's a scam
+          </Link>
+          <p style={{ fontSize: "1.02rem", margin: "0.3rem 0 0" }}>
+            Already paid or shared information?{" "}
+            <Link href="/triage" className="underline-link">
+              Start the recovery steps
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="mt-12 note-card">
         <h3 className="serif" style={{ marginTop: 0 }}>
           Free, self-serve, not a commercial service
         </h3>
@@ -83,7 +86,6 @@ export default function Home() {
       <section className="mt-12">
         <OfficialHelp />
       </section>
-
     </div>
   );
 }

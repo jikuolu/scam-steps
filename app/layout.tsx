@@ -61,8 +61,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="serif wordmark">Scam Steps</span>
             </Link>
             <nav className="flex gap-5 text-sm">
-              <Link href="/triage">Start recovering</Link>
-              <Link href="/am-i-scammed">Am I scammed?</Link>
+              <Link href="/am-i-scammed">Is this a scam?</Link>
+              <Link href="/triage">Already scammed</Link>
               <Link href="/scam-types">Common scams</Link>
               <Link href="/about">About</Link>
             </nav>

@@ -2,25 +2,45 @@ import Link from "next/link";
 import { WarningSigns } from "@/components/WarningSigns";
 
 export const metadata = {
-  title: "Not sure if you've been scammed?",
+  title: "Is this a scam?",
   description:
-    "A plain-language checklist of the warning signs of a scam. If several apply to your situation, treat it as a scam — here's what to do next.",
+    "Free, plain-language check for whether something is a scam — whether it's happening right now or you're checking after the fact. Five groups of warning signs. If several apply, treat it as a scam.",
   alternates: { canonical: "/am-i-scammed" },
 };
 
 export default function AmIScammedPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <h1 className="serif">Not sure if you've been scammed?</h1>
+      <h1 className="serif">Is this a scam?</h1>
       <p className="prose mt-4 home-lede">
-        Being unsure is normal. Scams are built to look ordinary while
-        they're happening — the doubt usually comes later. Read the warning
-        signs below. You don't need a perfect match. If several of these
-        describe your situation, treat it as a scam and act on that.
+        Whether something feels off right now or you're going back over what
+        already happened — the warning signs are the same. Read the groups
+        below. You don't need a perfect match; if several apply, treat it as
+        a scam and act on that.
       </p>
 
-      <p className="prose mt-6 text-sm" style={{ color: "var(--muted)" }}>
-        Five groups of warning signs. Tap any one to see what's inside.
+      <section
+        className="mt-7"
+        style={{
+          border: "1px solid var(--warn)",
+          background: "var(--warn-soft)",
+          borderRadius: 4,
+          padding: "0.95rem 1.15rem",
+        }}
+      >
+        <p className="prose" style={{ margin: 0, color: "var(--warn)", fontWeight: 600 }}>
+          Did they tell you to keep it secret?
+        </p>
+        <p className="prose mt-1 text-sm" style={{ margin: "0.35rem 0 0", color: "var(--foreground)" }}>
+          That alone is enough. Real institutions never ask you to hide
+          anything from your family, your bank, or the police. Tell someone
+          you trust right now.
+        </p>
+      </section>
+
+      <p className="prose mt-7 text-sm" style={{ color: "var(--muted)" }}>
+        Five groups of warning signs, in plain language. Tap any heading to
+        collapse a group you've already read.
       </p>
       <div className="mt-3">
         <WarningSigns />

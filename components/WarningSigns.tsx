@@ -96,7 +96,10 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 export function WarningSigns() {
-  const [open, setOpen] = useState<number[]>([]);
+  // Expanded by default — the in-the-moment user can't reliably find a
+  // collapse toggle, and the per-group summaries aren't a substitute for
+  // seeing the flags.
+  const [open, setOpen] = useState<number[]>([0, 1, 2, 3, 4]);
 
   const toggle = (i: number) =>
     setOpen((cur) => (cur.includes(i) ? cur.filter((x) => x !== i) : [...cur, i]));
