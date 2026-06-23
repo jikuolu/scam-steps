@@ -54,6 +54,12 @@ export default function Home() {
               Start the recovery steps
             </Link>
           </p>
+          <p style={{ fontSize: "0.96rem", color: "var(--muted)", margin: "0.2rem 0 0" }}>
+            Or{" "}
+            <Link href="/cards" className="underline-link">
+              browse all 12 action cards
+            </Link>
+          </p>
         </div>
       </section>
 
